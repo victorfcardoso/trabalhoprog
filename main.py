@@ -15,7 +15,7 @@ def solveQuadraticEquation(a, b, c):
         raiz2 = "NA"
     return raiz1, raiz2
 
-def solve_quadratics(a, b , c):
+def solve_quadratics(a, b, c):
     raizes = []
     for i in range(len(a)):
         raizes.append(solveQuadraticEquation(a[i], b[i], c[i]))
