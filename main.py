@@ -4,8 +4,8 @@ def solve_single_quadratic(a: float, b: float, c: float) -> List[Union[float, st
     try:
         discriminant = b**2 - 4 * a * c
         if discriminant > 0:
-            raiz1 = (-b + (b ** 2 - 4 * a * c)**(1/2)) / (2 * a)
-            raiz2 = (-b - (b ** 2 - 4 * a * c)**(1/2)) / (2 * a)
+            raiz1 = (-b - (b ** 2 - 4 * a * c)**(1/2)) / (2 * a)
+            raiz2 = (-b + (b ** 2 - 4 * a * c)**(1/2)) / (2 * a)
         elif discriminant == 0:
             raiz1 = (-b + (b ** 2 - 4 * a * c) ** (1 / 2)) / (2 * a)
             raiz2 = "NA"
