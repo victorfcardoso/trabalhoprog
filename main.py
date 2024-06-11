@@ -3,9 +3,9 @@ from typing import List, Union
 def solve_single_quadratic(a: float, b: float, c: float) -> List[Union[float, str]]:
     """
     Calculates the root of a single quadratic equation of the form a*x^2 + b*x + c = 0
-    :param a: coefficient of x^2
-    :param b: coefficient of x
-    :param c: constant
+    :parameter a: coefficient of x^2
+    :parameter b: coefficient of x
+    :parameter c: constant
     :return: A list (in increasing order) of the roots of the equation. If there's no root, the function returns 'NA'
     """
     try:
@@ -32,9 +32,9 @@ def solve_single_quadratic(a: float, b: float, c: float) -> List[Union[float, st
 def solve_quadratics(a: List[float], b: List[float], c: List[float]) -> List[List[Union[float , str ]]]:
     """
     Calculates the root of multiples quadratics equations of the form a*x^2 + b*x + c = 0
-    :param a: List of coefficient for x^2
-    :param b: List of coefficient for x
-    :param c: List of constant terms
+    :parameter a: List of coefficient for x^2
+    :parameter b: List of coefficient for x
+    :parameter c: List of constant terms
     :return: A list of lists containing the roots (in increasing order) of each quadratic equation. If there's no root, the function returns 'NA'
     """
     # Check if all lists have the same length
