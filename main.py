@@ -6,18 +6,18 @@ def solve_single_quadratic(a: float, b: float, c: float) -> List[Union[float, st
     :param a: coefficient of x^2
     :param b: coefficient of x
     :param c: constant
-    :return: A list (in decreasing order) of the roots of the equation. If there's no root, the function returns 'NA'
+    :return: A list (in increasing order) of the roots of the equation. If there's no root, the function returns 'NA'
     """
     try:
         # Calculate the discriminant
         discriminant = b**2 - 4 * a * c
         if discriminant > 0:
             # For the case of two distinct real roots
-            raiz1 = (-b - (b ** 2 - 4 * a * c)**(1/2)) / (2 * a)
-            raiz2 = (-b + (b ** 2 - 4 * a * c)**(1/2)) / (2 * a)
+            raiz1 = (-b - (discriminant)**(1/2)) / (2 * a)
+            raiz2 = (-b + (discriminant)**(1/2)) / (2 * a)
         elif discriminant == 0:
             # One real root
-            raiz1 = (-b + (b ** 2 - 4 * a * c) ** (1 / 2)) / (2 * a)
+            raiz1 = (-b + (discriminant) ** (1 / 2)) / (2 * a)
             raiz2 = "NA"
         else:
             # No real roots
@@ -35,7 +35,7 @@ def solve_quadratics(a: List[float], b: List[float], c: List[float]) -> List[Lis
     :param a: List of coefficient for x^2
     :param b: List of coefficient for x
     :param c: List of constant terms
-    :return: A list of lists containing the roots (in decreasing order) of each quadratic equation. If there's no root, the function returns 'NA'
+    :return: A list of lists containing the roots (in increasing order) of each quadratic equation. If there's no root, the function returns 'NA'
     """
     # Check if all lists have the same length
     if len(a) != len(b) or len(a) != len(c) or len(b) != len(c):
