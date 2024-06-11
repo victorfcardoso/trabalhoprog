@@ -1,8 +1,6 @@
-# This is a sample Python script.
+from typing import List, Union
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-def solveQuadraticEquation(a, b, c):
+def solve_single_quadratic(a: float, b: float, c: float) -> List[Union[float, str]]:
     discriminant = b**2 - 4 * a * c
     if discriminant > 0:
         raiz1 = (-b + (b ** 2 - 4 * a * c)**(1/2)) / (2 * a)
@@ -15,10 +13,10 @@ def solveQuadraticEquation(a, b, c):
         raiz2 = "NA"
     return raiz1, raiz2
 
-def solve_quadratics(a, b, c):
+def solve_quadratics(a: List[float], b: List[float], c: List[float]) -> List[List[Union[float , str ]]]:
     raizes = []
     for i in range(len(a)):
-        raizes.append(solveQuadraticEquation(a[i], b[i], c[i]))
+        raizes.append(solve_single_quadratic(a[i], b[i], c[i]))
     return raizes
 
 a = [2, 1, 3]
