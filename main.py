@@ -18,12 +18,15 @@ def solve_single_quadratic(a: float, b: float, c: float) -> List[Union[float, st
 
 
 def solve_quadratics(a: List[float], b: List[float], c: List[float]) -> List[List[Union[float , str ]]]:
+    if len(a) != len(b) or len(a) != len(c) or len(b) != len(c):
+        return [["Error: All input lists must have the same length"]]
+
     raizes = []
-    try:
-        for i in range(len(a)):
+    for i in range(len(a)):
+        try:
             raizes.append(solve_single_quadratic(a[i], b[i], c[i]))
-    except Exception as e:
-        solutions.append([f"Error: {e}"])
+        except Exception as e:
+            raizes.append([f"Error: {e}"])
     return raizes
 
 a = [2, 1, 3]
